@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace Test.RogueSmash {
+namespace brewery.framework.character {
 
-    [CreateAssetMenu(fileName = "New CharacterDataTemplate", menuName ="RogueSmash/Data/Create Character Data Template")]
+    [CreateAssetMenu(fileName = "New CharacterDataTemplate", menuName ="Brewery/Data/Create Character Data Template")]
     public class CharacterDataTemplate : ScriptableObject
     {
         [SerializeField]

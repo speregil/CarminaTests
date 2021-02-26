@@ -8,5 +8,6 @@ namespace brewery.framework.input {
         float GetAxis(string axisName);
         bool GetButton(string buttonName);
         Vector2 GetMouseVector();
+        void CheckForInput();
     }
 }

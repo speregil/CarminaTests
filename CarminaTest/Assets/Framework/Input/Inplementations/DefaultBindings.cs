@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 
 namespace brewery.framework.input {
+
+    /// <sumary> 
+    /// Default implementation of the InputBindings superclass
+    /// </sumary>
     public class DefaultBindings : InputBindings
     {
         protected override void SetupBindings()

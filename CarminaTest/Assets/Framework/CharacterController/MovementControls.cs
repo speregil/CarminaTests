@@ -2,6 +2,8 @@
 using brewery.framework.input;
 
 namespace brewery.framework.character.movement {
+    
+    [RequireComponent(typeof(AudioSource))]
     public class MovementControls : MonoBehaviour {
 
         private IInputManager inputManager;
@@ -17,6 +19,7 @@ namespace brewery.framework.character.movement {
         [SerializeField] private float rotationSpeed;
         [SerializeField] private float stepMarginError;
         [SerializeField] private float rotationMarginError;
+        [SerializeField] private int obstacleLayer;
 
         private bool isMoving;
         private bool isRotating;
@@ -109,7 +112,8 @@ namespace brewery.framework.character.movement {
         }
 
         private bool checkObstacle(int faceDirection) {
-            return Physics.Raycast(frontAnchor.transform.position, frontAnchor.transform.TransformDirection(Vector3.forward*faceDirection), moveDistance/2 + 1);
+            int layerMask = 1 << obstacleLayer;
+            return Physics.Raycast(frontAnchor.transform.position, frontAnchor.transform.TransformDirection(Vector3.forward*faceDirection), moveDistance/2 + 1,layerMask);
         }
 
         private void MoveCharacter() {

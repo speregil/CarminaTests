@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace brewery.framework.level.events {
+namespace brewery.framework.level {
     public class EventManager: MonoBehaviour
     {
         [SerializeField] private UnityEvent eventList;
@@ -13,7 +13,6 @@ namespace brewery.framework.level.events {
 
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log("Entró al piso");
             invokeEvents();
         }
 

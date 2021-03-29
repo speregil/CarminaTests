@@ -24,13 +24,12 @@ namespace brewery.framework.ui {
         void Start(){
             healthText = healthField.GetComponentInChildren<Text>();
             healthBar = healthField.GetComponentInChildren<Image>();
-
             currentHealth = 0;
             maxHealth = 0;    
         }
 
         public void UpdateCurrentHealth(int value) {
-            currentHealth += value;
+            currentHealth = value;
             healthText.text = currentHealth.ToString();
             if(currentHealth >= maxHealth*highTreshold)
                 healthBar.color = highHealthColor;
@@ -42,7 +41,8 @@ namespace brewery.framework.ui {
 
         public void UpdateMaxHealth(int value) {
             maxHealth = value;
-            UpdateCurrentHealth(0);
+            int dif = maxHealth - currentHealth;
+            UpdateCurrentHealth(currentHealth + dif);
         }
     }
 }
